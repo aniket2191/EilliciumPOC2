@@ -97,6 +97,18 @@ public class ReadConfig {
 		return pro.getProperty("jira_url");
 	}
 	
+	public String getRecipient1()
+	{
+		return pro.getProperty("recipient1");
+	}
 	
+	public String getRecipient2()
+	{
+		return pro.getProperty("recipient2");
+	}
+	public String getRecipient3()
+	{
+		return pro.getProperty("recipient3");
+	}
 
 }

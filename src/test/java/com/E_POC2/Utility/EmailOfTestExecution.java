@@ -17,72 +17,79 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
+import com.E_POC2.TestBase.TestBase;
+
 
 
 
 public class EmailOfTestExecution {
-	
-    public static void mail(int totalTestCases,int passCount,int failedCount) {
-        // Recipient email addresses
-        String[] recipients = {"shirke2191@gmail.com"};
 
-        // Email properties
-        Properties props = new Properties();
-        props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.starttls.enable", "true");
-        props.put("mail.smtp.host", "smtp.gmail.com");
-        props.put("mail.smtp.port", "587");
-        props.put("mail.smtp.debug", "true");
-        props.setProperty("mail.smtp.starttls.enable", "true");
-        props.setProperty("mail.smtp.ssl.protocols", "TLSv1.2");
-        
+	public static void mail(int totalTestCases,int passCount,int failedCount) {
+		// Recipient email addresses
+		//String[] recipients = {"shirke2191@gmail.com"};
+		String[] recipients = 
+			{		TestBase.config.getRecipient1(),
+					TestBase.config.getRecipient2(),
+					TestBase.config.getRecipient3()
+			};
 
-        final String senderEmail = "aniketshirke21@gmail.com";
-        final String senderPassword = "tfnsajdtdpnnpxmm";
+		// Email properties
+		Properties props = new Properties();
+		props.put("mail.smtp.auth", "true");
+		props.put("mail.smtp.starttls.enable", "true");
+		props.put("mail.smtp.host", "smtp.gmail.com");
+		props.put("mail.smtp.port", "587");
+		props.put("mail.smtp.debug", "true");
+		props.setProperty("mail.smtp.starttls.enable", "true");
+		props.setProperty("mail.smtp.ssl.protocols", "TLSv1.2");
 
-        Session session = Session.getInstance(props, new Authenticator() {
-            @Override
-            protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(senderEmail, senderPassword);
-            }
-        });
 
-        try {
-            // Create a new message
-            Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress(senderEmail));
+		final String senderEmail = "aniketshirke21@gmail.com";
+		final String senderPassword = "tfnsajdtdpnnpxmm";
 
-            // Add recipients
-            for (String recipient : recipients) {
-                message.addRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
-            } 
-            message.setSubject("Report POC2");
-            
-            
-         
+		Session session = Session.getInstance(props, new Authenticator() {
+			@Override
+			protected PasswordAuthentication getPasswordAuthentication() {
+				return new PasswordAuthentication(senderEmail, senderPassword);
+			}
+		});
 
-            MimeBodyPart textPart = new MimeBodyPart();
-            String emailContent = "<html><body><h1 style=\"font-size: 16px;\">Hello,</h1><p>Please refer to the attached document for the Ellicium test report.</p><p>Here is an update on your project:</p><table border='1'><tr><th>Total number of Testcases</th><th>Total number of Testcase passed</th><th>Total number of Testcase failed</th></tr><tr><td style=\"text-align: center\"> "+(totalTestCases-1) +" </td><td style=\"text-align: center\"> "+(passCount-1)+"</td><td style=\"text-align: center\"> "+(failedCount)+"</td></tr></table></body></html>";
-            textPart.setContent(emailContent, "text/html");
+		try {
+			// Create a new message
+			Message message = new MimeMessage(session);
+			message.setFrom(new InternetAddress(senderEmail));
 
-            // Attach the Excel file
-            MimeBodyPart attachmentPart = new MimeBodyPart();
-            File file = new File("G:\\E_Git_Traingings_Ecplise_workspace\\E_POC2\\TestDataFiles\\TestcaseReport_Dashboard.xlsx"); 
-            DataSource source = new FileDataSource(file);
-            attachmentPart.setDataHandler(new DataHandler(source));
-            attachmentPart.setFileName(file.getName());
+			// Add recipients
+			for (String recipient : recipients) {
+				message.addRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
+			} 
+			message.setSubject("Report POC2");
 
-            Multipart multipart = new MimeMultipart();
-            multipart.addBodyPart(attachmentPart);
-            multipart.addBodyPart(textPart);
-            message.setContent(multipart);
 
-            // Send the message
-            Transport.send(message);
 
-            System.out.println("Email sent successfully.");
-        } catch (MessagingException e) {
-            e.printStackTrace();
-        }
-    }
+
+			MimeBodyPart textPart = new MimeBodyPart();
+			String emailContent = "<html><body><h1 style=\"font-size: 16px;\">Hello,</h1><p>Please refer to the attached document for the Ellicium test report.</p><p>Here is an update on your project:</p><table border='1'><tr><th>Total number of Testcases</th><th>Total number of Testcase passed</th><th>Total number of Testcase failed</th></tr><tr><td style=\"text-align: center\"> "+(totalTestCases-1) +" </td><td style=\"text-align: center\"> "+(passCount-1)+"</td><td style=\"text-align: center\"> "+(failedCount)+"</td></tr></table></body></html>";
+			textPart.setContent(emailContent, "text/html");
+
+			// Attach the Excel file
+			MimeBodyPart attachmentPart = new MimeBodyPart();
+			File file = new File("G:\\E_Git_Traingings_Ecplise_workspace\\E_POC2\\TestDataFiles\\TestcaseReport_Dashboard.xlsx"); 
+			DataSource source = new FileDataSource(file);
+			attachmentPart.setDataHandler(new DataHandler(source));
+			attachmentPart.setFileName(file.getName());
+
+			Multipart multipart = new MimeMultipart();
+			multipart.addBodyPart(attachmentPart);
+			multipart.addBodyPart(textPart);
+			message.setContent(multipart);
+
+			// Send the message
+			Transport.send(message);
+
+			System.out.println("Email sent successfully.");
+		} catch (MessagingException e) {
+			e.printStackTrace();
+		}
+	}
 }

@@ -1,0 +1,17 @@
+com\E_POC2\Utility\ReadSQLQueryFromExcel$1.class
+com\E_POC2\TestBase\TestBase.class
+com\E_POC2\Utility\EmailOfTestExecution.class
+com\E_POC2\DataBaseConfiguration\DataBaseConnection.class
+com\E_POC2\Utility\ReadConfig.class
+com\E_POC2\PageObject\PowerBIDashBoard.class
+com\E_POC2\Utility\EmailOfTestExecution$1.class
+com\E_POC2\TestCases\PowerBIDashBoardTest1.class
+com\E_POC2\Utility\ExtentManager.class
+com\E_POC2\Utility\JiraPolicy.class
+com\E_POC2\Utility\Demo_ExtentReport.class
+com\E_POC2\Utility\ReadFromExcel.class
+com\E_POC2\Utility\ReadSQLQueryFromExcel.class
+com\E_POC2\TestBase\TestDataManipulation.class
+com\E_POC2\TestCases\PowerBIDashBoardTest.class
+com\E_POC2\Utility\JiraServiceProvider.class
+com\E_POC2\Utility\setResultToExcel.class

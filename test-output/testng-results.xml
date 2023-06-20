@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="2" failed="1" skipped="0">
+<testng-results ignored="0" total="10" passed="9" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-06-19T11:13:23 IST" name="Suite" finished-at="2023-06-19T11:15:58 IST" duration-ms="154840">
+  <suite started-at="2023-06-19T14:34:06 IST" name="Suite" finished-at="2023-06-19T14:37:57 IST" duration-ms="230817">
     <groups>
     </groups>
-    <test started-at="2023-06-19T11:13:23 IST" name="CompatibilityTestingOnChrome" finished-at="2023-06-19T11:15:58 IST" duration-ms="154840">
+    <test started-at="2023-06-19T14:34:06 IST" name="CompatibilityTestingOnChrome" finished-at="2023-06-19T14:37:57 IST" duration-ms="230817">
       <class name="com.E_POC2.TestCases.PowerBIDashBoardTest1">
-        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:com.E_POC2.TestCases.PowerBIDashBoardTest1@7e3181aa]" started-at="2023-06-19T11:13:23 IST" name="setUp" finished-at="2023-06-19T11:13:30 IST" duration-ms="6720" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:com.E_POC2.TestCases.PowerBIDashBoardTest1@2e2ff723]" started-at="2023-06-19T14:34:06 IST" name="setUp" finished-at="2023-06-19T14:34:14 IST" duration-ms="8400" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="loginAndDropDownSelection()[pri:0, instance:com.E_POC2.TestCases.PowerBIDashBoardTest1@7e3181aa]" started-at="2023-06-19T11:13:30 IST" name="loginAndDropDownSelection" finished-at="2023-06-19T11:14:05 IST" duration-ms="35307" status="PASS">
+        <test-method signature="loginAndDropDownSelection()[pri:0, instance:com.E_POC2.TestCases.PowerBIDashBoardTest1@2e2ff723]" started-at="2023-06-19T14:34:14 IST" name="loginAndDropDownSelection" finished-at="2023-06-19T14:34:45 IST" duration-ms="31084" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginAndDropDownSelection -->
-        <test-method signature="monthPerformance()[pri:0, instance:com.E_POC2.TestCases.PowerBIDashBoardTest1@7e3181aa]" started-at="2023-06-19T11:14:05 IST" name="monthPerformance" finished-at="2023-06-19T11:15:01 IST" depends-on-methods="com.E_POC2.TestCases.PowerBIDashBoardTest1.loginAndDropDownSelection" duration-ms="56080" status="PASS">
+        <test-method signature="monthPerformance()[pri:0, instance:com.E_POC2.TestCases.PowerBIDashBoardTest1@2e2ff723]" started-at="2023-06-19T14:34:45 IST" name="monthPerformance" finished-at="2023-06-19T14:35:40 IST" depends-on-methods="com.E_POC2.TestCases.PowerBIDashBoardTest1.loginAndDropDownSelection" duration-ms="54853" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- monthPerformance -->
-        <test-method signature="lowAttendancePerformance()[pri:1, instance:com.E_POC2.TestCases.PowerBIDashBoardTest1@7e3181aa]" started-at="2023-06-19T11:15:02 IST" name="lowAttendancePerformance" finished-at="2023-06-19T11:15:55 IST" depends-on-methods="com.E_POC2.TestCases.PowerBIDashBoardTest1.loginAndDropDownSelection" duration-ms="52913" status="FAIL">
+        <test-method signature="lowAttendancePerformance()[pri:1, instance:com.E_POC2.TestCases.PowerBIDashBoardTest1@2e2ff723]" started-at="2023-06-19T14:35:41 IST" name="lowAttendancePerformance" finished-at="2023-06-19T14:36:33 IST" depends-on-methods="com.E_POC2.TestCases.PowerBIDashBoardTest1.loginAndDropDownSelection" duration-ms="52813" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[Maps do not have the same size:4 != 1]]>
@@ -71,7 +71,35 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- lowAttendancePerformance -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.E_POC2.TestCases.PowerBIDashBoardTest1@7e3181aa]" started-at="2023-06-19T11:15:58 IST" name="tearDown" finished-at="2023-06-19T11:15:58 IST" duration-ms="3" status="PASS">
+        <test-method signature="GirdPerformance()[pri:2, instance:com.E_POC2.TestCases.PowerBIDashBoardTest1@2e2ff723]" started-at="2023-06-19T14:36:37 IST" name="GirdPerformance" finished-at="2023-06-19T14:37:33 IST" depends-on-methods="com.E_POC2.TestCases.PowerBIDashBoardTest1.loginAndDropDownSelection" duration-ms="56288" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GirdPerformance -->
+        <test-method signature="characteristicPerformance()[pri:3, instance:com.E_POC2.TestCases.PowerBIDashBoardTest1@2e2ff723]" started-at="2023-06-19T14:37:33 IST" name="characteristicPerformance" finished-at="2023-06-19T14:37:37 IST" depends-on-methods="com.E_POC2.TestCases.PowerBIDashBoardTest1.loginAndDropDownSelection" duration-ms="3871" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- characteristicPerformance -->
+        <test-method signature="Marks_Obtained()[pri:4, instance:com.E_POC2.TestCases.PowerBIDashBoardTest1@2e2ff723]" started-at="2023-06-19T14:37:38 IST" name="Marks_Obtained" finished-at="2023-06-19T14:37:41 IST" depends-on-methods="com.E_POC2.TestCases.PowerBIDashBoardTest1.loginAndDropDownSelection" duration-ms="3522" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Marks_Obtained -->
+        <test-method signature="total_Marks()[pri:5, instance:com.E_POC2.TestCases.PowerBIDashBoardTest1@2e2ff723]" started-at="2023-06-19T14:37:42 IST" name="total_Marks" finished-at="2023-06-19T14:37:45 IST" depends-on-methods="com.E_POC2.TestCases.PowerBIDashBoardTest1.loginAndDropDownSelection" duration-ms="3513" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- total_Marks -->
+        <test-method signature="marks_Percentage()[pri:6, instance:com.E_POC2.TestCases.PowerBIDashBoardTest1@2e2ff723]" started-at="2023-06-19T14:37:45 IST" name="marks_Percentage" finished-at="2023-06-19T14:37:49 IST" depends-on-methods="com.E_POC2.TestCases.PowerBIDashBoardTest1.loginAndDropDownSelection" duration-ms="3498" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- marks_Percentage -->
+        <test-method signature="attendance_Percentage()[pri:7, instance:com.E_POC2.TestCases.PowerBIDashBoardTest1@2e2ff723]" started-at="2023-06-19T14:37:49 IST" name="attendance_Percentage" finished-at="2023-06-19T14:37:53 IST" depends-on-methods="com.E_POC2.TestCases.PowerBIDashBoardTest1.loginAndDropDownSelection" duration-ms="3478" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- attendance_Percentage -->
+        <test-method signature="Group_Marking()[pri:8, instance:com.E_POC2.TestCases.PowerBIDashBoardTest1@2e2ff723]" started-at="2023-06-19T14:37:53 IST" name="Group_Marking" finished-at="2023-06-19T14:37:56 IST" depends-on-methods="com.E_POC2.TestCases.PowerBIDashBoardTest1.loginAndDropDownSelection" duration-ms="3436" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Group_Marking -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.E_POC2.TestCases.PowerBIDashBoardTest1@2e2ff723]" started-at="2023-06-19T14:37:57 IST" name="tearDown" finished-at="2023-06-19T14:37:57 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
